@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app</title>
+    <link rel="icon" href="weather.svg">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+
+    <!--  firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js" defer></script>
+
+    <!-- css | js -->
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+    <script src="auth.js" type="module" defer></script>
+
+</head>
+
+<body onload="loadDefaultLocation()">
+
+    <div id="header">
+        <h1>Forecast hub</h1>
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-menu" onclick="openNav()">
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="18" y2="18" />
+        </svg>
+    </div>
+
+    <div id="mySidenav" class="sidenav" style="width: 0px;">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="./login/login.html">SignIn/SignUp</a>
+        <a href="#">About</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div id="inputLocation">
+        <input type="text" placeholder="location" id="search">
+        <button id="myBtn" onclick="locationName()">Search</button>
+    </div>
+
+    <div id="defaultData" class="default-weather">
+
+        <div id="add-default-weather">
+            <img src="add.jpg" height="70px" width="70px" onclick="hideAndInput()">
+            <div id="tempData">
+                <input type="text" id="addDataInput"></input>
+                <button onclick="go()">GO</button>
+                <button onclick="cancel()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="defaultDataPara">
+        ADD data to home page ^
+    </div>
+
+    <div id="weather">
+        <div id="location"> </div>
+        <div id="temperature"> </div>
+        <div id="description"> </div>
+    </div>
+
+    <div id="forecast"></div>
+
+    <div class="footer">
+        &copy; Rahul Gogra
+    </div>
+
+
+</body>
+
+</html>
